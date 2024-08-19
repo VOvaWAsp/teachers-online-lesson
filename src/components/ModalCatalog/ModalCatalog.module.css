@@ -1,0 +1,151 @@
+.closeBtn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background-color: transparent;
+    border: transparent;
+}
+
+.blockInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    padding: 10px 64px 64px 64px;
+}
+
+.title {
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 40px;
+line-height: 120%;
+letter-spacing: -0.02em;
+color: #121417;
+}
+
+.subtitle {
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+color: #121417;
+}
+
+.paragraph {
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 137%;
+color: rgba(18, 20, 23, 0.8);
+}
+
+.text {
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 12px;
+line-height: 133%;
+color: #8a8a89;
+}
+
+.blockTeacher {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.img {
+    border-radius: 100px;
+width: 44px;
+height: 44px;
+}
+
+.teacherInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.titleForm {
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 24px;
+line-height: 133%;
+color: #121417;
+max-width: 400px;
+margin-bottom: 24px;
+}
+
+.containerRadio {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.radioText {
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 137%;
+text-align: center;
+color: #121417;
+margin-left: 8px;
+}
+
+.containerInput {
+    max-width: 472px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.input {
+    border: 1px solid rgba(18, 20, 23, 0.1);
+border-radius: 12px;
+padding: 16px 18px 16px 18px;
+width: 100%;
+}
+
+.input::placeholder {
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 137%;
+color: #121417;
+}
+
+.btn {
+    border-radius: 12px;
+    padding: 16px 0;
+    width: 100%;
+    font-family: var(--font-family);
+font-weight: 700;
+font-size: 18px;
+line-height: 156%;
+color: #121417;
+border: transparent;
+background: #f4c550;
+margin-top: 40px;
+}
+
+
+.btn:hover,
+.btn:focus {
+    background: #ffdc86;
+}
+
+@media (max-width: 767px) {
+    .blockInfo {
+        max-width: 240px;
+        padding: 10px;
+    }
+}
+input[type="radio"] {
+    accent-color: #f4c550; /* Оранжевий колір */
+  }
+  
+  /* Зміна кольору чекбоксів на оранжевий */
+  input[type="checkbox"] {
+    accent-color: #f4c550; /* Оранжевий колір */
+  }

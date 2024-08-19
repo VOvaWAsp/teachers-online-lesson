@@ -1,0 +1,142 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heroContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.heroBlock {
+    padding: 20px 10px;
+    border-radius: 30px;
+width: 100%;
+background: #f8f8f8;
+}
+
+.title {
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 30px;
+line-height: 117%;
+letter-spacing: -0.02em;
+color: #121417;
+margin-bottom: 10px;
+}
+
+.titleSpan {
+    font-style: italic;
+font-weight: 400;
+background-color: #FBE9BA;
+}
+
+.text {
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 137%;
+letter-spacing: -0.02em;
+color: #121417;
+margin-bottom: 20px;
+}
+
+.btn {
+    border-radius: 12px;
+padding: 12px 38px;
+background: #f4c550;
+font-family: var(--font-family);
+font-weight: 700;
+font-size: 12px;
+line-height: 156%;
+color: #121417;
+border: transparent;
+}
+
+.img {
+    height: 100%;
+    width: 100%;
+}
+
+.benefitscontainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    gap: 30px;
+    border: 1.50px dashed #f4c550;
+border-radius: 30px;
+margin-top: 20px;
+}
+
+.subtitle {
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 28px;
+line-height: 114%;
+letter-spacing: -0.02em;
+color: #121417;
+}
+
+.benefitsText {
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 14px;
+line-height: 129%;
+letter-spacing: -0.02em;
+color: rgba(18, 20, 23, 0.7);
+}
+
+@media (min-width: 768px) {
+    .heroContainer {
+        flex-direction: row;
+    }
+    .heroBlock {
+        padding: 60px 40px;
+    }
+    .img {
+        min-height: 418px;
+        max-height: 530px;
+        max-width: 568px;
+    }
+    .title {
+        font-size: 48px;
+        margin-bottom: 20px;
+        max-width: 548px;
+    }
+    .text {
+        font-size: 16px;
+        margin-bottom: 40px;
+        max-width: 471px;
+    }
+    .btn {
+        padding: 16px 88px;
+        font-size: 18px;
+    }
+    .benefitscontainer {
+        flex-direction: row;
+        gap: 0;
+        padding: 40px 0;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .benefitsBlock {
+        display: flex;
+        flex-direction: row;
+    }
+    .benefitsText {
+        margin-left: 10px;
+        width: 96px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .heroBlock {
+        padding: 115px 120px;
+    }
+    .img {
+        width: 568px;
+    }
+}

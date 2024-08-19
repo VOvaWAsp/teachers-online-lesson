@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.text {
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 14px;
+line-height: 129%;
+color: #8a8a89;
+margin-bottom: 8px;
+}
+
+.select {
+    border-radius: 14px;
+padding: 16px 100px 16px 18px;
+border: transparent;
+}
+
+.option {
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 18px;
+line-height: 111%;
+color: #121417;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        flex-direction: row;
+    }
+    .select {
+    padding: 16px 148px 16px 18px;
+    }
+}

@@ -1,0 +1,62 @@
+@media (max-width: 767px) {
+    .navbar {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+    }
+    .BurgerMenu {
+        display: none;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        justify-content: space-between;
+        padding: 0 20px;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .link {
+        font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125%;
+    color: #121417;
+    }
+    .logIn {
+        background-color: transparent;
+        border: transparent;
+        font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 125%;
+    color: #121417;
+    }
+    
+    .registration {
+        border-radius: 12px;
+    padding: 14px 39px;
+    background: #121417;
+    border: transparent;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 125%;
+    color: #fff;
+    }
+    
+    .disabled {
+        pointer-events: none;
+        color: gray;
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+}
