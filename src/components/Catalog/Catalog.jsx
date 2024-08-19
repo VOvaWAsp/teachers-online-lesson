@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import MoreInfoCatalog from "../MoreInfoCatalog/MoreInfoCatalog";
 import { useSelector } from "react-redux";
-import css from './Catalog.module.css'
-import icon from '../../images/svg/stroke.svg'
+import css from './Catalog.module.css';
+import icon from '../../images/svg/stroke.svg';
+import 'react-toastify/dist/ReactToastify.css';
+import { Toaster, toast } from "react-hot-toast";
 
 function Catalog({ catalogs, isOpened }) {
   const [openMoreInfo, setOpenMoreInfo] = useState(false);
@@ -18,9 +20,10 @@ function Catalog({ catalogs, isOpened }) {
 
   const handleFavorites = (item) => {
     if (isAuthenticated === null) {
-        console.log('problem')
+        toast.error("please register or login")
+        console.log("Toast should be displayed");
         return;
-    }
+      }
     const savedItems = JSON.parse(window.localStorage.getItem('saved')) || [];
     const itemIndex = savedItems.findIndex(savedItem => savedItem.id === item.id);
   
@@ -132,6 +135,10 @@ function Catalog({ catalogs, isOpened }) {
       {visibleCatalogs.length < catalogs.length && (
         <button onClick={loadMore} className={css.loadMore} type="button">Load More</button>
       )}
+              <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
     </>
   );
 }
