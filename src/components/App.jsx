@@ -1,11 +1,12 @@
 import { Route, Routes } from "react-router-dom"
-import HomePages from "../pages/HomePages/HomePages"
-import TeachersPages from "../pages/TeachersPages/TeachersPages"
-import FavoritesPages from "../pages/FavoritesPages/FavoritesPages"
 import Header from "./Header/Header"
 import { useDispatch, useSelector } from "react-redux"
-import { useEffect } from "react"
+import { lazy, Suspense, useEffect } from "react"
 import { fetchCatalog } from "../redux/Catalog/operations"
+
+const HomePages = lazy(() => import("../pages/HomePages/HomePages"))
+const TeachersPages = lazy(() => import("../pages/TeachersPages/TeachersPages"))
+const FavoritesPages = lazy(() => import("../pages/FavoritesPages/FavoritesPages"))
 
 function App() {
   const dispatch = useDispatch();
@@ -16,11 +17,13 @@ function App() {
   return (
     <div>
       <Header />
+      <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<HomePages />} />
         <Route path="/teachers" element={<TeachersPages />} />
         <Route path="/favorites" element={<FavoritesPages />} />
       </Routes>
+      </Suspense>
     </div>
   )
 }

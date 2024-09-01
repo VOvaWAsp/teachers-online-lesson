@@ -1,15 +1,22 @@
 import { useState } from "react";
 import css from './BurgerMenu.module.css'
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import icon from '../../images/svg/stroke.svg'
 import Modals from "../Modals/Modals";
+import { logOut } from "../../redux/auth/operation";
 
 function BurgerMenu() {
     const [isOpen, setIsOpen] = useState(false);
 
     const [modalIsOpen, setIsOpened] = useState(false);
   const [modalType, setModalType] = useState("");
+
+  const dispatch = useDispatch()
+
+  const logOuted = () => {
+    dispatch(logOut())
+  }
 
   const isAuthenticated = useSelector(state => state.auth.token);
 
@@ -44,15 +51,15 @@ function BurgerMenu() {
             </div>
         </div>
         <div className={css.navbar}>
-          <NavLink className={css.link} to="/">
+        <NavLink className={({ isActive }) => (isActive ? css.activeLink : css.link)} to="/">
             Home
           </NavLink>
-          <NavLink className={css.link} to="/teachers">
+          <NavLink className={({ isActive }) => (isActive ? css.activeLink : css.link)} to="/teachers">
             Teachers
           </NavLink>
-          {isAuthenticated === null ? <NavLink aria-disabled="true" className={`${css.link} ${css.disabled}`} to="/favorites">
+          {isAuthenticated === null ? <NavLink s className={css.disabled} to="/favorites">
             Favorites
-          </NavLink> : <NavLink className={css.link} to="/favorites">
+          </NavLink> : <NavLink className={({ isActive }) => (isActive ? css.activeLink : css.link)} to="/favorites">
             Favorites
           </NavLink>}
         </div>
@@ -76,6 +83,7 @@ function BurgerMenu() {
           >
             Registration
           </button>
+          <button onClick={logOuted} type="button" className={css.logOut}>Log Out</button>
         </div>
       </div>
       <Modals isOpen={modalIsOpen} closeModal={closeModal} type={modalType} />

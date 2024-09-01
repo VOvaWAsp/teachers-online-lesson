@@ -223,3 +223,9 @@ text-align: left;
     background-color: transparent;
     border: transparent;
 }
+
+.subtitleWithLine:hover,
+.subtitleWithLine:hover {
+    color: #f4c550;
+    border-bottom: #f4c550;
+}

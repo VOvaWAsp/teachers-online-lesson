@@ -39,7 +39,6 @@ const Registration = () => {
         password: data.password,
      }));
   }
-
   return (
       <form onSubmit={handleSubmit(onSubmit)} className={css.container} action="">
         <div className={css.textBlock}>

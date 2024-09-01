@@ -29,9 +29,12 @@ function Filter({
     control: (provided) => ({
       ...provided,
       borderRadius: "14px",
-      padding: "16px 48px",
-      border: "transparent",
-      backgroundColor: "#f4f4f4",
+      padding: "16px 18px",
+      backgroundColor: "#fff",
+      border: "none",
+      boxShadow: "none",
+      display: "flex",
+      alignItems: "center",
     }),
     menu: (provided) => ({
       ...provided,
@@ -59,7 +62,33 @@ function Filter({
       ...provided,
       color: "#121417",
     }),
+    indicatorsContainer: (provided) => ({
+      ...provided,
+      padding: "0", // Прибираємо додатковий відступ навколо стрілки
+      display: "flex",
+      alignItems: "center",
+    }),
+    dropdownIndicator: (provided) => ({
+      ...provided,
+      padding: "0 16px", // Відступи для стрілки, щоб вона була на правильному місці
+      color: "#121417", // Кастомізація кольору стрілки
+    }),
+    indicatorSeparator: () => ({
+      display: "none", // Видаляємо розділювач між текстом і стрілкою
+    }),
+    valueContainer: (provided) => ({
+      ...provided,
+      padding: "0", // Вирівнювання тексту всередині селекта
+      paddingLeft: "18px", // Відступ зліва для тексту
+      display: "flex",
+      alignItems: "center",
+    }),
   };
+  
+  
+  
+  
+  
 
   return (
     <div className={css.container}>

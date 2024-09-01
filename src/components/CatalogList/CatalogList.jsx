@@ -32,7 +32,6 @@ function CatalogList() {
     );
   });
 
-  console.log(catalogs);
   const handleOpenModal = (item) => {
     setSelectedItem(item);
   };

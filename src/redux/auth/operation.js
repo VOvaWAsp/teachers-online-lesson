@@ -13,14 +13,18 @@ const clearAuthHeader = () => {
 
 export const registered = createAsyncThunk('auth/register', async ({ email, password }, thunkAPI) => {
     try {
+        console.log('Registering user');
         const response = await createUserWithEmailAndPassword(auth, email, password);
         const token = await response.user.getIdToken();
         setAuthHeader(token);
+        console.log('Registration successful');
         return { user: response.user, token: token };
     } catch (error) {
+        console.log('Registration error:', error.message);
         return thunkAPI.rejectWithValue(error.message);
     }
 });
+
 
 export const login = createAsyncThunk('auth/login', async ({ email, password }, thunkAPI) => {
     try {
@@ -37,10 +41,12 @@ export const logOut = createAsyncThunk('auth/logOut', async (_, thunkAPI) => {
     try {
         await signOut(auth);
         clearAuthHeader();
+        thunkAPI.dispatch(refreshUser());
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
     }
 });
+
 
 export const refreshUser = createAsyncThunk('auth/refreshUser', async (_, thunkAPI) => {
     const state = thunkAPI.getState();

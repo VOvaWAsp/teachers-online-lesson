@@ -3,7 +3,7 @@ import { FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER, persistStore } from 
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/slice';
-import { CatalogReducer } from './Catalog/CatalogSlice';
+import { catalogReducer } from './Catalog/CatalogSlice';
 
 const persistConfig = {
   key: 'auth',
@@ -14,9 +14,9 @@ const persistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, authReducer),
-    catalog: CatalogReducer,
+    catalog: catalogReducer,
   },
-  middleware: getDefaultMiddleware =>
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],

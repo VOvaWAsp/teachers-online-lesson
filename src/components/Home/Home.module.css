@@ -140,3 +140,8 @@ color: rgba(18, 20, 23, 0.7);
         width: 568px;
     }
 }
+
+.btn:hover,
+.btn:focus {
+    background: #ffdc86;
+}

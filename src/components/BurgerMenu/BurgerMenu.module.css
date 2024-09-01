@@ -1,5 +1,6 @@
 .burger-menu {
     position: relative;
+    z-index: 999;
   }
   
   .menu-icon {
@@ -26,6 +27,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 10px;
     list-style: none;
+    z-index: 999;
   }
   
   .menu.open {
@@ -95,8 +97,42 @@ color: #fff;
 }
 
 .disabled {
-    pointer-events: none;
-    color: gray;
-    cursor: not-allowed;
-    opacity: 0.6;
-  }
+    display: none;
+   }
+
+   .link:hover,
+   .link:focus {
+       color: #f4c550;
+   }
+   
+   .activeLink {
+       color: #f4c550;
+   }
+   
+   .logIn:hover,
+   .logIn:focus {
+       color: #f4c550;
+       border-bottom: 1px solid #f4c550;
+   }
+   
+   .registration:hover,
+   .registration:focus {
+       color: black;
+       background-color: white;
+   }
+   
+   .logOut {
+       background-color: transparent;
+           border: transparent;
+           font-family: var(--font-family);
+       font-weight: 700;
+       font-size: 16px;
+       line-height: 125%;
+       color: #121417;
+   }
+   
+   .logOut:hover,
+   .logOut:focus {
+       color: #f4c550;
+       border-bottom: 1px solid #f4c550;
+   }
