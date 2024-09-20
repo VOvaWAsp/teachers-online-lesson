@@ -64,22 +64,22 @@ function Filter({
     }),
     indicatorsContainer: (provided) => ({
       ...provided,
-      padding: "0", // Прибираємо додатковий відступ навколо стрілки
+      padding: "0",
       display: "flex",
       alignItems: "center",
     }),
     dropdownIndicator: (provided) => ({
       ...provided,
-      padding: "0 16px", // Відступи для стрілки, щоб вона була на правильному місці
-      color: "#121417", // Кастомізація кольору стрілки
+      padding: "0 16px",
+      color: "#121417",
     }),
     indicatorSeparator: () => ({
-      display: "none", // Видаляємо розділювач між текстом і стрілкою
+      display: "none",
     }),
     valueContainer: (provided) => ({
       ...provided,
-      padding: "0", // Вирівнювання тексту всередині селекта
-      paddingLeft: "18px", // Відступ зліва для тексту
+      padding: "0",
+      paddingLeft: "18px",
       display: "flex",
       alignItems: "center",
     }),

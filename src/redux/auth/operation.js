@@ -39,6 +39,7 @@ export const login = createAsyncThunk('auth/login', async ({ email, password }, 
 
 export const logOut = createAsyncThunk('auth/logOut', async (_, thunkAPI) => {
     try {
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Затримка перед виходом
         await signOut(auth);
         clearAuthHeader();
         thunkAPI.dispatch(refreshUser());
@@ -46,6 +47,7 @@ export const logOut = createAsyncThunk('auth/logOut', async (_, thunkAPI) => {
         return thunkAPI.rejectWithValue(error.message);
     }
 });
+
 
 
 export const refreshUser = createAsyncThunk('auth/refreshUser', async (_, thunkAPI) => {

@@ -76,7 +76,9 @@ function Header() {
           >
             Registration
           </button>
+          {isAuthenticated === null ? '' :
           <button onClick={logOuted} type="button" className={css.logOut}>Log Out</button>
+          }
         </div>
       </div>
       <Modals isOpen={modalIsOpen} closeModal={closeModal} type={modalType} />

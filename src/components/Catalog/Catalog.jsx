@@ -21,7 +21,6 @@ function Catalog({ catalogs, isOpened }) {
   const handleFavorites = (item) => {
     if (isAuthenticated === null) {
         toast.error("please register or login")
-        console.log("Toast should be displayed");
         return;
       }
     const savedItems = JSON.parse(window.localStorage.getItem('saved')) || [];

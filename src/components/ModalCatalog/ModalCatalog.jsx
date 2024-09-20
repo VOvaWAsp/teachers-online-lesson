@@ -19,6 +19,7 @@ const schema = yup.object().shape({
   .integer("A phone number can't include a decimal point")
   .min(8)
   .required('A phone number is required'),
+  categoryLearn: yup.string().required("A radio option is required")
 });
 
 const customStyles = {
@@ -62,7 +63,7 @@ const customStyles = {
           contentLabel="Example Modal"
         >
           <button className={css.closeBtn} onClick={closeModal}>
-            <svg stroke='black' width="32" height="32">
+            <svg className={css.closeBtnSvg} stroke='black' width="32" height="32">
               <use href={`${icon}#icon-x`}></use>
             </svg>
           </button>
@@ -93,6 +94,13 @@ const customStyles = {
                     {...register('categoryLearn')}
                   />
                   <span className={css.radioText}>Career and business</span>
+                  <ErrorMessage
+                    name="categoryLearn"
+                    errors={errors}
+                    render={({ message }) => (
+                      <p className={css.error}>{message}</p>
+                    )}
+                  />
                 </label>
                 <label>
                   <input
@@ -101,6 +109,13 @@ const customStyles = {
                     {...register('categoryLearn')}
                   />
                   <span className={css.radioText}>Lesson for kids</span>
+                  <ErrorMessage
+                    name="categoryLearn"
+                    errors={errors}
+                    render={({ message }) => (
+                      <p className={css.error}>{message}</p>
+                    )}
+                  />
                 </label>
                 <label>
                   <input
@@ -109,6 +124,13 @@ const customStyles = {
                     {...register('categoryLearn')}
                   />
                   <span className={css.radioText}>Living abroad</span>
+                  <ErrorMessage
+                    name="categoryLearn"
+                    errors={errors}
+                    render={({ message }) => (
+                      <p className={css.error}>{message}</p>
+                    )}
+                  />
                 </label>
                 <label>
                   <input
@@ -117,6 +139,13 @@ const customStyles = {
                     {...register('categoryLearn')}
                   />
                   <span className={css.radioText}>Exams and coursework</span>
+                  <ErrorMessage
+                    name="categoryLearn"
+                    errors={errors}
+                    render={({ message }) => (
+                      <p className={css.error}>{message}</p>
+                    )}
+                  />
                 </label>
                 <label>
                   <input
@@ -125,6 +154,13 @@ const customStyles = {
                     {...register('categoryLearn')}
                   />
                   <span className={css.radioText}>Culture, travel or hobby</span>
+                  <ErrorMessage
+                    name="categoryLearn"
+                    errors={errors}
+                    render={({ message }) => (
+                      <p className={css.error}>{message}</p>
+                    )}
+                  />
                 </label>
               </div>
               <div className={css.containerInput}>

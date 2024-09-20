@@ -12,7 +12,6 @@ export const fetchCatalog = createAsyncThunk('catalog/fetchAll', async (_, thunk
             const object = Object.values(data);
             return object;
         } else {
-            console.log("No data available");
             return [];
         }
     } catch (error) {

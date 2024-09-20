@@ -7,6 +7,7 @@ import { fetchCatalog } from "../redux/Catalog/operations"
 const HomePages = lazy(() => import("../pages/HomePages/HomePages"))
 const TeachersPages = lazy(() => import("../pages/TeachersPages/TeachersPages"))
 const FavoritesPages = lazy(() => import("../pages/FavoritesPages/FavoritesPages"))
+const Error = lazy(() => import("../components/Error/Error"))
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<HomePages />} />
         <Route path="/teachers" element={<TeachersPages />} />
         <Route path="/favorites" element={<FavoritesPages />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       </Suspense>
     </div>
