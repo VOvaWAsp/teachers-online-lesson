@@ -2,15 +2,17 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getDatabase, ref, get, child } from "firebase/database";
 
+const APIKEY = import.meta.env.REACT_APP_APIKEY
+
 const firebaseConfig = {
-  apiKey: "AIzaSyB5GoNc-Z75y1fHAmGvyG7QTwPXrTmuHTc",
-  authDomain: "trachers-online-lesson.firebaseapp.com",
-  databaseURL: "https://trachers-online-lesson-default-rtdb.europe-west1.firebasedatabase.app/",
-  projectId: "trachers-online-lesson",
-  storageBucket: "trachers-online-lesson.appspot.com",
-  messagingSenderId: "805499915866",
-  appId: "1:805499915866:web:ce6b4eacc3ad919f135263",
-  measurementId: "G-VSHW043C3Q"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  databaseURL: import.meta.env.VITE_DATABASEURL,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
+  measurementId: import.meta.env.VITE_MEASUREMENTID
 };
 
 const app = initializeApp(firebaseConfig);
